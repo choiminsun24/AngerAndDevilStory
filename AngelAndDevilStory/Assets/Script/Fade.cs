@@ -62,7 +62,7 @@ public class Fade : MonoBehaviour
         }
     }
 
-    public void Move_Scene(string Name)
+    public void Change_Scene(string Name)
     {
         fadeimage.SetActive(true);
         StartCoroutine(Fadeout(Name));
