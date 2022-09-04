@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class ChangeScene : MonoBehaviour
+public class Needs : MonoBehaviour
 {
+    public int need;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +17,9 @@ public class ChangeScene : MonoBehaviour
     {
         
     }
-
-    public void StartGame()
+    
+    public void clicked()
     {
-        SceneManager.LoadScene(1);
+
     }
 }
