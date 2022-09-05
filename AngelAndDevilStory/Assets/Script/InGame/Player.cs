@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public bool[] AandD; //[0]는 천사가 눌렸는지 여부, [1]은 악마가 눌렸는지 여부를 나타냄.
-    public int helpness = 0;
+    private bool[] AandD; //[0]는 천사가 눌렸는지 여부, [1]은 악마가 눌렸는지 여부를 나타냄.
+    private int helpness = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         AandD = new bool[2];
         //천사 악마 bool 디폴트로 세팅
-        AandD[0] = false;
-        AandD[1] = false;
+        AandD[0] = false; //천사
+        AandD[1] = false; //악마
+
+        Debug.Log(!true);
     }
 
     // Update is called once per frame
@@ -40,7 +42,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void set_help(int btn)
+    public void P_Status(int btn)
     {
         AandD[btn] = !AandD[btn];
 
