@@ -1,3 +1,5 @@
+//Player의 상태(현재 도움을 주는 게 천사인지 악마인지)에 대한 스크립트
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +7,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private bool[] AandD; //[0]는 천사가 눌렸는지 여부, [1]은 악마가 눌렸는지 여부를 나타냄.
-    private int helpness = 0;
+    static private int helpness = 0; 
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,11 @@ public class Player : MonoBehaviour
     void Update()
     {
         
+    }
+
+    static public int get_Player()
+    {
+        return helpness;
     }
 
     public int change_helpness() //새로운 helpness 값을 반환
@@ -42,7 +49,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void P_Status(int btn)
+    public void P_Status(int btn) //천사 또는 악마 버튼 눌렀을 때
     {
         AandD[btn] = !AandD[btn];
 
