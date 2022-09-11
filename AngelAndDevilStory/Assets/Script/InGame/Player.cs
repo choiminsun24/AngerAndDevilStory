@@ -59,10 +59,7 @@ public class Player : MonoBehaviour
     public void P_Status(int btn) //Ãµ»ç ¶Ç´Â ¾Ç¸¶ ¹öÆ° ´­·¶À» ¶§
     {
         AandD[btn] = !AandD[btn];
-        Debug.Log("´­·È´Ù");
         helpness = change_helpness();
-        Debug.Log("¹Ù²î¾ú´Ù");
         animAD[btn].SetBool("clicked", AandD[btn]);
-        Debug.Log(AandD[btn]);
     }
 }
