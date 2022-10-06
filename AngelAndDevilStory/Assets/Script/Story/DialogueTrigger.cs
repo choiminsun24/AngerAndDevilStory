@@ -2,18 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public bool lastDialogue = false; //마지막 대화인지 여부. 다음 씬으로 갈지, 다음 대화로 갈지를 결정.
-
-    public Dialogue dia;
-    public TextMeshProUGUI Text;
-    private GameObject Score;
+    public Dialogue[] dia = new Dialogue[2];
+    public int numDialog = 1;
 
     public void Trigger()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dia, lastDialogue);
+        FindObjectOfType<DialogueManager>().setDialogue(dia, numDialog, "inGame1");
+        if (numDialog == 0)
+        {
+            Debug.Log("끝");
+            return;
+        }
+            
+        numDialog--;
     }
 
     void Start()

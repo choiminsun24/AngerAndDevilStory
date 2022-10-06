@@ -2,48 +2,66 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    public string Next;
+    DialogueTrigger DT;
 
     public TextMeshProUGUI dialogueText;
     public Queue<string> sentences;
+
+    private string sentence;
+    private bool displayAnim;
+
+    Dialogue[] dia;
+    private int num;
+    string sceneName;
 
     // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
+        DT = GetComponent<DialogueTrigger>();
     }
 
-    public void StartDialogue(Dialogue dialogue, bool Last) //대화 시작
+    public void setDialogue(Dialogue[] dia, int num, string sceneName) //대화 시작
     {
-        sentences.Clear(); //이전 대화 삭제
-        foreach (string sentence in dialogue.sentences) //큐의 문장을 한 문장씩 넣어줌.
-        {
-            sentences.Enqueue(sentence);
-        }
-        DisplayNextSentence(Last); //sentences에 담긴 문장을 한 글자씩 출력
+        this.num = num;
+        this.sceneName = sceneName;
+        this.dia = dia;
+
+        thisDialogue(dia[num]);
     }
 
-    public void DisplayNextSentence(bool Last)
+    public void thisDialogue(Dialogue dialog) //이번 배경에서의 대화
+    {
+        foreach (string str in dialog.sentences) //큐의 문장을 한 문장씩 넣어줌.
+        {
+            this.sentences.Enqueue(str);
+        }
+
+        nextButton();
+    }
+
+    public void nextButton() //대화에서 한 문장
     {
         if (sentences.Count == 0)
         {
-            if (Last)
-                EndScene();
+            if (this.num == 0)
+                SceneManager.LoadScene(this.sceneName);
             else
                 EndDialogue();
+
             return;
         }
 
-        string sentence = sentences.Dequeue();
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        StartCoroutine(Display(sentences.Dequeue()));
     }
 
-    IEnumerator TypeSentence(string sentence)
+    IEnumerator Display(string sentence) //문장을 보여줄 때 도로록 쓰기
     {
         dialogueText.text = "";
         foreach (char c in sentence.ToCharArray())
@@ -55,18 +73,16 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue() //다음 대화로
     {
-        //애니메이션 넣어서 다음 장면으로 넘기기
+        this.num--;
+        setAnimation();
+        thisDialogue(dia[this.num]);
     }
 
-    public void EndScene() //다음 씬으로
+    void setAnimation()
     {
-        //게임으로 넘어가는 함수
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        if (displayAnim == true)
+            displayAnim = false;
+        else
+            displayAnim = true;
     }
 }
