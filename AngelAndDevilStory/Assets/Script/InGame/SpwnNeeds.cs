@@ -15,7 +15,7 @@ public class SpwnNeeds : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        spwnTime = 5.0f;
     }
 
     // Update is called once per frame
@@ -25,10 +25,10 @@ public class SpwnNeeds : MonoBehaviour
         {
             if (spwnTime < time)
             {
-                Transform randomPoint  = spwnPoint[Random.Range(0, spwnPoint.Length)];
+                Vector3 randomPoint  = spwnPoint[Random.Range(0, spwnPoint.Length)].position;
                 GameObject randomNeed = needs[Random.Range(0, needs.Length)];
 
-                Instantiate(randomNeed, randomPoint.position, Quaternion.identity, cvs.transform);
+                Instantiate(randomNeed, randomPoint, Quaternion.identity, cvs.transform); //캔버스 오브젝트 하위에 생성
 
                 count--;
                 time = 0;

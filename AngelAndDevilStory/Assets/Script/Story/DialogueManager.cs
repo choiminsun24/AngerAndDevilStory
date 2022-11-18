@@ -45,14 +45,14 @@ public class DialogueManager : MonoBehaviour
         nextButton();
     }
 
-    public void nextButton() //대화에서 한 문장
+    public void nextButton() //대화 안에서 한 문장씩 꺼내어 보여주기.
     {
-        if (sentences.Count == 0)
+        if (sentences.Count == 0) //마지막 문장일 때
         {
-            if (this.num == 0)
+            if (this.num == 0) //마지막 대화면 다음 씬으로 넘어간다.
                 SceneManager.LoadScene(this.sceneName);
             else
-                EndDialogue();
+                EndDialogue(); //마지막 대화가 아니면 다음 대화로 넘어간다.
 
             return;
         }
@@ -61,7 +61,7 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(Display(sentences.Dequeue()));
     }
 
-    IEnumerator Display(string sentence) //문장을 보여줄 때 도로록 쓰기
+    IEnumerator Display(string sentence) //문장을 보여줄 때 한 글자씩 보여주기
     {
         dialogueText.text = "";
         foreach (char c in sentence.ToCharArray())
@@ -71,7 +71,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void EndDialogue() //다음 대화로
+    public void EndDialogue() //다음 대화로 1.애니메이션 배경전환 2. 다음 대화 넣기
     {
         this.num--;
         setAnimation();

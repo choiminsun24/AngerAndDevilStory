@@ -63,7 +63,7 @@ public class Needs : MonoBehaviour
         yield break;
     }
 
-    private IEnumerator correct() //실패했을 때 버튼이 빨개짐.
+    private IEnumerator correct() //성공
     {
         while (img.color.a > 0)
         {
