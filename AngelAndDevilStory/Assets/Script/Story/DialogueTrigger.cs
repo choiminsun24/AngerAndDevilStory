@@ -8,10 +8,11 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue[] dia = new Dialogue[2];
     public int numDialog = 1;
+    public string scene = "inGame1";
 
     public void Trigger()
     {
-        FindObjectOfType<DialogueManager>().setDialogue(dia, numDialog, "inGame1");
+        FindObjectOfType<DialogueManager>().setDialogue(dia, numDialog, scene);
         if (numDialog == 0)
         {
             Debug.Log("³¡");

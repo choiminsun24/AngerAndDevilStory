@@ -11,9 +11,11 @@ public class DialogueManager : MonoBehaviour
 
     public TextMeshProUGUI dialogueText;
     public Queue<string> sentences;
+    public GameObject animObj;
+    Animator anim;
 
     private string sentence;
-    private bool displayAnim;
+    private bool displayAnim = false;
 
     Dialogue[] dia;
     private int num;
@@ -24,6 +26,7 @@ public class DialogueManager : MonoBehaviour
     {
         sentences = new Queue<string>();
         DT = GetComponent<DialogueTrigger>();
+        anim = animObj.GetComponent<Animator>();
     }
 
     public void setDialogue(Dialogue[] dia, int num, string sceneName) //대화 시작
@@ -84,5 +87,7 @@ public class DialogueManager : MonoBehaviour
             displayAnim = false;
         else
             displayAnim = true;
+
+        anim.SetBool("go", displayAnim);
     }
 }
