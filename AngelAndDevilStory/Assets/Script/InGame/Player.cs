@@ -27,12 +27,6 @@ public class Player : MonoBehaviour
         animAD[1] = buttonD.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     static public int get_Player()
     {
         return helpness;

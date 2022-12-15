@@ -25,12 +25,6 @@ public class Fade : MonoBehaviour
         StartCoroutine(Fadein());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     //만약 true면 시행.
     IEnumerator Fadein() //화면이 나오는 것. 
     {

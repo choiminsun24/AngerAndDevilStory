@@ -9,20 +9,30 @@ public class Needs : MonoBehaviour
     public int need;
     public TextMeshProUGUI ment;
 
+    private float timer = 0.0f;
+
     private Color clr;
     private Image img;
+    private ScoreManager score;
 
     // Start is called before the first frame update
     void Start()
     {
+        GameObject ScoreObject = GameObject.FindWithTag("Score");
+        score = ScoreObject.GetComponent<ScoreManager>();
         img = GetComponent<Image>();
         clr = img.color;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
 
+        if (timer >= 2.0f)
+        {
+            score.subScoreDisappear();
+            Destroy(gameObject);
+        }
     }
     
     public void clicked()
@@ -31,13 +41,13 @@ public class Needs : MonoBehaviour
         {
             ment.text = "감사합니다!";
             StartCoroutine(correct());
-            //점수 증가
+            score.addScore();
         }
         else
         {
             StartCoroutine(fail());
             ment.text = "오, 이런...!";
-            //점수 감소
+            score.subScore();
         }
     }
 
