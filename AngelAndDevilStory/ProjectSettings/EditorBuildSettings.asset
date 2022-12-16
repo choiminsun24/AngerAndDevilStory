@@ -19,22 +19,19 @@ EditorBuildSettings:
     guid: ef6ef7c8c9fa904428fe140cc82afa5a
   - enabled: 1
     path: Assets/Scenes/Stage2/Story2.unity
-    guid: dc74741772fd7ef499dbcf0321487b43
+    guid: 63d1bb6ead427a64d928972986940d6b
   - enabled: 1
     path: Assets/Scenes/Stage2/inGame2.unity
     guid: a5aafc422e3fef2479b3471434ba7fc0
   - enabled: 1
     path: Assets/Scenes/Stage3/Story3.unity
-    guid: 187a210cd3a476448980691c3a7d5aee
+    guid: 0f80436f1fe4d304e9160e9f1eceeac2
   - enabled: 1
     path: Assets/Scenes/Stage3/inGame3.unity
     guid: 4a4ff8e4bd5fa8a4eb3c93cec4c7e87e
   - enabled: 1
     path: Assets/Scenes/Stage4/Story4.unity
     guid: 910ab3dd49b2e414680acf7314f39359
-  - enabled: 1
-    path: Assets/Scenes/Stage4/Book4.unity
-    guid: 9c6d4ed42db73d74dbfc373a4cd82b28
   - enabled: 1
     path: Assets/Scenes/Stage4/inGame4.unity
     guid: 84d4b0667500923479347f5b58be2c03
