@@ -328,6 +328,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Change_Scene
       objectReference: {fileID: 0}
+    - target: {fileID: 5475168372023174694, guid: 57d516f314b0247479cdb1e49d3ae672, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Main
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57d516f314b0247479cdb1e49d3ae672, type: 3}
 --- !u!114 &701112250 stripped

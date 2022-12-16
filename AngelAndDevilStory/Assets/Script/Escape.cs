@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Escape : MonoBehaviour
 {
     public GameObject escape;
     public GameObject helpness;
+
+    void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 
     // Update is called once per frame
     void Update()
@@ -25,6 +31,7 @@ public class Escape : MonoBehaviour
     public void goMenu() //메뉴로 이동
     {
         SceneManager.LoadScene("Main");
+        onFrame();
     }
 
     public void End() //게임종료

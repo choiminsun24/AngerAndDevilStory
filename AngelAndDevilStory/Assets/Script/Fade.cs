@@ -51,6 +51,8 @@ public class Fade : MonoBehaviour
 
         if (color.a >= 1)
         {
+            if (StageManager.getClearStage() == 0)
+                Name = "Ending";
             SceneManager.LoadScene(Name);
             yield break; //이거 한 번 지워보기. 함수 끝났으니까 break 굳이 없어도 되지 않을까...?
         }
