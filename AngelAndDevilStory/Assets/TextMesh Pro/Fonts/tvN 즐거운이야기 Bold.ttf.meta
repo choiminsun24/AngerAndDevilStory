@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cdbb6f9845b556f4f92ebe643398253e
+guid: f00b7a86fa8a4cb45b453d8b7df418d5
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -10,7 +10,8 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - tvN Enjoystories
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: cdbb6f9845b556f4f92ebe643398253e, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

@@ -344,11 +344,11 @@ PrefabInstance:
     - target: {fileID: 7502882382480417815, guid: e9e5bdb8b74153944877def75ee8bd0b, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 6b92bea2e42cf3b48bd6561ac531d477, type: 2}
+      objectReference: {fileID: 11400000, guid: 88ef1aacd3ce67148bb5a350f84c3bdd, type: 2}
     - target: {fileID: 7502882382480417815, guid: e9e5bdb8b74153944877def75ee8bd0b, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 5196773729671435418, guid: 6b92bea2e42cf3b48bd6561ac531d477, type: 2}
+      objectReference: {fileID: 2620323790155889255, guid: 88ef1aacd3ce67148bb5a350f84c3bdd, type: 2}
     - target: {fileID: 7502882382480417817, guid: e9e5bdb8b74153944877def75ee8bd0b, type: 3}
       propertyPath: m_SizeDelta.x
       value: 1849.7097
@@ -876,8 +876,8 @@ MonoBehaviour:
       \uBC30\uB824\uC2EC \uC788\uB294 \uBAA8\uC2B5\uC73C\uB85C \uB9CC\uB4E4\uC5C8\uAE30
       \uB54C\uBB38\uC774\uC5C8\uC8E0."
   - sentences:
-    - "\uB2E4\uB978 \uD53C\uC870\uBB3C\uB4E4\uC740 '\uC545\uB9C8'\uB97C \uB450\uB824\uC6CC\uD558\uAE30
-      \uC2DC\uC791\uD588\uC5B4\uC694."
+    - "'\uD53C\uC870\uBB3C'\uB4E4\uC740 \uD558\uB098 \uB458\uC529 '\uC545\uB9C8'\uB97C
+      \uB450\uB824\uC6CC\uD558\uAE30 \uC2DC\uC791\uD588\uC5B4\uC694."
     - "'\uC545\uB9C8'\uB294 '\uC1A1\uC2E0'\uC758 \uAC00\uC7A5 \uC5C4\uACA9\uD558\uACE0
       \uB0C9\uC815\uD55C \uBD80\uBD84\uC73C\uB85C \uB9CC\uB4E4\uC5C8\uAE30 \uB54C\uBB38\uC774\uC5C8\uC5B4\uC694."
     - "\uB2E4\uB978 '\uD53C\uC870\uBB3C'\uB4E4\uC740 \uC545\uB9C8\uC758 \uBC8C\uC744

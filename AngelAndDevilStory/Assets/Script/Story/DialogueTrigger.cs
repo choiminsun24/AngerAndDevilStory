@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue[] dia = new Dialogue[2];
-    public int numDialog = 1;
+    public int numDialog;
     public string scene = "inGame1";
 
     public void Trigger()

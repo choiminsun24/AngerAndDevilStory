@@ -32,6 +32,28 @@ public class ScoreManager : MonoBehaviour
     public void addScore()
     {
         score += pointAdd;
+        setScoreTXT();
+    }
+
+    public void subScoreDisappear()
+    {
+        score -= DISAPPEARPOINT;
+
+        if (stage == 5) //3스테이지에서는 그냥 지도록 함.
+            score -= DISAPPEARPOINT * 9;
+
+        setScoreTXT();
+    }
+
+    public void subScore()
+    {
+        score -= pointSub;
+        setScoreTXT();
+    }
+
+    private void setScoreTXT() //텍스트 표기, 점수 검사
+    {
+        scoreTXT.text = score.ToString();
 
         //점수 높으면 클리어
         if (score >= 100)
@@ -39,31 +61,11 @@ public class ScoreManager : MonoBehaviour
             clearStage();
         }
 
-        setScoreTXT();
-    }
-
-    public void subScoreDisappear()
-    {
-        score -= DISAPPEARPOINT;
-        setScoreTXT();
-    }
-
-    public void subScore()
-    {
-        score -= pointSub;
-
         //점수 낮으면 실패
         if (score <= 0)
         {
             loseStage();
         }
-
-        setScoreTXT();
-    }
-
-    private void setScoreTXT()
-    {
-        scoreTXT.text = score.ToString();
     }
 
     private void clearStage()

@@ -611,7 +611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointAdd: 5
-  pointSub: 10
+  pointSub: 20
   stage: 5
   SpawnManager: {fileID: 2128967230}
   pop: {fileID: 1849154409}
